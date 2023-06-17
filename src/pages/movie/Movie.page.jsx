@@ -6,6 +6,7 @@ import FilterComponent from "../../components/content/ContentFilterComponent";
 
 export default function MoviePage() {
   const { title } = useParams();
+  console.log(title);
   const [movieList, setMovieList] = useState([]);
   async function getMoviesByName(title) {
     const currentMovies = await movie.getMoviesByName(title);
@@ -16,14 +17,15 @@ export default function MoviePage() {
     getMoviesByName(title);
   }, []);
 
+  console.log(movieList);
 
   return (
     <div className="container">
       <div className="row">
-        <div className="col-3">
+        <div className="col-4">
           <FilterComponent />
         </div>
-        <div className="col-9">
+        <div className="col-8">
           <ContentListComponent movieList={movieList} />
         </div>
       </div>

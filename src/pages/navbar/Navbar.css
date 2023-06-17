@@ -8,6 +8,7 @@
   margin-left: 40px;
 }
 .navbar-ul {
+  z-index: 999;
   position: absolute;
   left: 185px;
   display: flex;
@@ -20,16 +21,20 @@
 }
 .navbar-ul-li:hover .navbar-ul-ul {
   display: block;
+  border: 1px solid silver;
+
 }
 .navbar-ul-li:hover .navbar-ul-ul2 {
   display: block;
+  border: 2px solid silver;
+
 }
 .navbar-ul-ul {
   border-radius: 5px;
   position: absolute;
   display: none;
   flex-direction: column;
-  background: orange;
+  background: white;
   color: black;
   width: 200px;
   top: 35px;
@@ -47,7 +52,7 @@
   position: absolute;
   display: none;
   flex-direction: column;
-  background: orange;
+  background: white;
   color: black;
   width: 200px;
   top: 35px;

@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "./pages/navbar/Navbar";
+import HomePage from "./pages/home page/Home.page";
 
 function App() {
   return (
     <div className="App">
-     <Navbar/>
+     <HomePage/>
      <Outlet/>
     </div>
   );
