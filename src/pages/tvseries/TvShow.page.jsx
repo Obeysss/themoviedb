@@ -14,7 +14,7 @@ export default function TvShowPage() {
 
   useEffect(()=>{
     getShowByName(title)
-  },[])
+  },[title])
   return (
     <div>
         <div className="container">

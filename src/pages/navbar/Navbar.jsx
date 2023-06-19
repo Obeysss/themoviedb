@@ -13,79 +13,80 @@ export default function Navbar() {
         </Link>
         <ul className="navbar-ul">
           <li className="navbar-ul-li">
-            Фильмы
+            Movies
             <ul className="navbar-ul-ul">
               <Link
                 style={{ textDecoration: "none", color: "black" }}
                 to={moviePoint + "popular"}
               >
-                <li>Популярные</li>
+                <li>Popular</li>
               </Link>
               <Link
                 style={{ textDecoration: "none", color: "black" }}
                 to={moviePoint + "now_playing"}
               >
-                <li>Смотрят сейчас</li>
+                <li>Now Playing</li>
               </Link>
               <Link
                 style={{ textDecoration: "none", color: "black" }}
                 to={moviePoint + "upcoming"}
               >
-                <li>Ожидаемые</li>
+                <li>Upcoming</li>
               </Link>
               <Link
                 style={{ textDecoration: "none", color: "black" }}
                 to={moviePoint + "top_rated"}
               >
-                <li>Лучшие</li>
+                <li>Top Rated</li>
               </Link>
             </ul>
           </li>
           <li className="navbar-ul-li">
-            Сериалы
+            TV Shows
             <ul className="navbar-ul-ul">
               <Link
                 style={{ textDecoration: "none", color: "black" }}
                 to={showPoint + "popular"}
               >
-                <li>Популярные</li>
+                <li>Popular</li>
               </Link>
               <Link
                 to={showPoint + "airing_today"}
                 style={{ textDecoration: "none", color: "black" }}
               >
-                <li>В эфире сегодня</li>
+                <li>Airing Today</li>
               </Link>
               <Link
                 to={showPoint + "on_the_air"}
                 style={{ textDecoration: "none", color: "black" }}
               >
-                <li>По телевидению</li>
+                <li>On TV</li>
               </Link>
               <Link
                 style={{ textDecoration: "none", color: "black" }}
                 to={showPoint + "top_rated"}
               >
-                <li>Лучшие</li>
+                <li>Top Rated</li>
               </Link>
             </ul>
           </li>
           <li className="navbar-ul-li">
-            Люди
+            People
             <ul className="navbar-ul-ul2">
-              <Link to={'/person'} style={{ textDecoration: "none", color: "black" }}
-              >  
-              
-              <li>Популярные Люди</li>
+              <Link
+                to={"/person"}
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <li>Popular People</li>
               </Link>
             </ul>
           </li>
           <li className="navbar-ul-li">
-            Ещё
+            More
             <ul className="navbar-ul-ul">
-              <li>Обсуждение</li>
-              <li>Доска посчёта</li>
-              <li>Поддержка</li>
+              <li>Discussions</li>
+              <li>Leaderboard</li>
+              <li>Suppot</li>
               <li>API</li>
             </ul>
           </li>

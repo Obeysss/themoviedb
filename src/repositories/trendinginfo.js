@@ -1,9 +1,9 @@
 import repository, { baseUrl, bearerToken } from "./repository";
 
-class TvShow {
-  async getShowByName(name) {
-    const endPoint = `tv/${name}`;
-    const series = await repository
+class TrendingInfo {
+  async getTrendingMovieInfo(id) {
+    const endPoint = `movie/${id}`;
+    const trendingMovieInfo = await repository
       .get(baseUrl + endPoint, {
         headers: {
           accept: "application/json",
@@ -11,14 +11,14 @@ class TvShow {
         },
       })
       .then((ress) => {
-        console.log(ress.data.results);
-        return ress.data.results;
+        console.log(ress.data);
+        return ress.data
+
       })
       .catch((err) => {
         console.log(err);
       });
-    return series;
+    return trendingMovieInfo;
   }
 }
-
-export default new TvShow();
+export default new TrendingInfo();

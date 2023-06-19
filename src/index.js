@@ -8,15 +8,19 @@ import MoviePage from "./pages/content/Movie.page";
 import TvShowPage from "./pages/tvseries/TvShow.page";
 import PopularPerson from "./pages/popular person/PopularPerson.page";
 import PageNotFonud from "./pages/404/404";
+import Home1Page from "./pages/home page/Home1.page";
+import TrendingMovieInfo from "./pages/trending movie info/TrendingMovieInfo.page";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App/>}>
+      <Route path="/" element={<Home1Page/>}/>
       <Route path="/movie/:title" element={<MoviePage />} />
       <Route path="/tv/:title" element={<TvShowPage />} />
       <Route path="/person" element={<PopularPerson/>}/>
+      <Route path="/movies/:id" element={<TrendingMovieInfo/>}/>
       </Route>
       <Route path="*" element={<PageNotFonud/>}/>
     </Routes>

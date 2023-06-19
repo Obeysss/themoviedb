@@ -1,9 +1,9 @@
 import repository, { baseUrl, bearerToken } from "./repository";
 
-class TvShow {
-  async getShowByName(name) {
-    const endPoint = `tv/${name}`;
-    const series = await repository
+class Trending {
+  async getTrendingMovie() {
+    const endPoint = "trending/movie/day";
+    const trendingMovie = await repository
       .get(baseUrl + endPoint, {
         headers: {
           accept: "application/json",
@@ -17,8 +17,8 @@ class TvShow {
       .catch((err) => {
         console.log(err);
       });
-    return series;
+    return trendingMovie;
   }
 }
 
-export default new TvShow();
+export default new Trending();

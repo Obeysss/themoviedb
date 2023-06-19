@@ -13,7 +13,6 @@ class PopularPerson{
               },
         })
         .then((ress)=>{
-            console.log(ress.data.results);
             return ress.data.results;
         })
         .catch((err)=>{

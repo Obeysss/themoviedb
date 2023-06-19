@@ -14,7 +14,7 @@ export default function MoviePage() {
 
   useEffect(() => {
     getMoviesByName(title);
-  }, []);
+  }, [title]);
 
 
   return (

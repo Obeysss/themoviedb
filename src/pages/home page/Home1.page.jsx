@@ -1,11 +1,12 @@
 import React from 'react'
-import Navbar from '../navbar/Navbar'
+import Search from '../search/Search'
 import TrendingMovie from '../../components/tranding movie/TrendingMovie'
 
-export default function HomePage() {
+export default function Home1Page() {
   return (
     <div>
-        <Navbar/>
+        <Search/>
+        <TrendingMovie/>
     </div>
   )
 }
