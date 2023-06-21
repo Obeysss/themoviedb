@@ -11,7 +11,6 @@ class TrendingInfo {
         },
       })
       .then((ress) => {
-        console.log(ress.data);
         return ress.data
 
       })

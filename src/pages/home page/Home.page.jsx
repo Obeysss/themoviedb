@@ -1,11 +1,14 @@
-import React from 'react'
-import Navbar from '../navbar/Navbar'
-import TrendingMovie from '../../components/tranding movie/TrendingMovie'
+import React from "react";
+import Navbar from "../navbar/Navbar";
+import Footer from "../footer/Footer";
+import { Outlet } from "react-router-dom";
 
 export default function HomePage() {
   return (
     <div>
-        <Navbar/>
+      <Navbar/>
+      <Outlet />
+      <Footer />
     </div>
-  )
+  );
 }

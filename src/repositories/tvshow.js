@@ -11,8 +11,7 @@ class TvShow {
         },
       })
       .then((ress) => {
-        console.log(ress.data.results);
-        return ress.data.results;
+        return ress.data;
       })
       .catch((err) => {
         console.log(err);

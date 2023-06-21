@@ -9,7 +9,7 @@ export default function TvShowPage() {
   const [showList,setShowList] = useState([])
  async function getShowByName(title){
     const currentShow = await tvshow.getShowByName(title);
-    setShowList(currentShow)
+    setShowList(currentShow.results)
   }
 
   useEffect(()=>{

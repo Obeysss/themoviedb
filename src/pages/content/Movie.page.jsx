@@ -7,9 +7,10 @@ import FilterComponent from "../../components/content/ContentFilterComponent";
 export default function MoviePage() {
   const { title } = useParams();
   const [movieList, setMovieList] = useState([]);
+  
   async function getMoviesByName(title) {
     const currentMovies = await movie.getMoviesByName(title);
-    setMovieList(currentMovies);
+    setMovieList(currentMovies.results);
   }
 
   useEffect(() => {

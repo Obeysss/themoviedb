@@ -11,7 +11,7 @@ class Movie {
         },
       })
       .then((ress) => {
-        return ress.data.results;
+        return ress.data;
       })
       .catch((err) => {
         console.log(err);

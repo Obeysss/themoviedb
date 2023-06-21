@@ -1,0 +1,24 @@
+.Footer{
+    background-color:rgb(3,37,65);
+   height: 321px;
+   margin: 0 auto;
+}
+.imgFooter{
+    width: 250px;
+    height: 114px;
+}
+button{
+    width: 200px;
+}
+.text{
+    font-size: 1.1rem;
+    line-height: 0.8rem;
+    font-weight: 500;
+    color:#fff;
+}
+.texth3{
+    font-size: 1.4rem;
+    color:#fff;
+    font-weight: 700;
+
+}
