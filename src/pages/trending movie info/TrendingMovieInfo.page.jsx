@@ -12,6 +12,9 @@ export default function TrendingMovieInfo() {
     setTrendingMovieInfo(currentTrendingMovieInfo);
   }
 
+console.log(trendingMovieInfo);
+
+
   useEffect(() => {
     getTrendingMovieInfo(id);
   }, []);

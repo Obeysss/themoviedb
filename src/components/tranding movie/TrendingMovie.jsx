@@ -8,7 +8,6 @@ export default function TrendingMovie() {
   const [trendingMovieList, setTrendingMovieList] = useState([]);
   const [type, setType] = useState("day");
   const { t } = useTranslation();
-
   async function getTrendingMovie() {
     const currentTrendingMovie = await trending.getTrendingMovie(type);
     setTrendingMovieList(currentTrendingMovie);

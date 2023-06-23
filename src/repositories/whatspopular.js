@@ -1,10 +1,8 @@
 import repository, { baseUrl, bearerToken } from "./repository";
-
-class SearchVal {
-  async getSearchName(name) {
-    console.log(name);
-    const endPoint = `search/multi?query=${name}`;
-    const search = await repository
+class WhatsPopular {
+  async getWhatsPopularMovie(type) {
+    const endPoint = `discover/${type}`;
+    const popularMovie = await repository
       .get(baseUrl + endPoint, {
         headers: {
           accept: "application/json",
@@ -12,13 +10,13 @@ class SearchVal {
         },
       })
       .then((ress) => {
-        console.log(ress.data);
         return ress.data;
       })
       .catch((err) => {
         console.log(err);
       });
-    return search;
+    return popularMovie;
   }
 }
-export default new SearchVal();
+
+export default new WhatsPopular();

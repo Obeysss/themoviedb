@@ -27,7 +27,7 @@ root.render(
           <Route path="/tv/:title" element={<TvShowPage />} />
           <Route path="/person" element={<PopularPerson />} />
           <Route path="/movie/:id" element={<TrendingMovieInfo />} />
-          <Route path="/search/:searchVal" element={<SearchPage />} />
+          <Route path="/search/:title" element={<SearchPage />} />
           <Route path="/movies_details/:id" element={<MoviesDetails/>}/>
           <Route path="/shows_details/:id" element={<ShowDetails/>}/>
           <Route path="/person_details/:id" element={<PersonDetails/>}/>

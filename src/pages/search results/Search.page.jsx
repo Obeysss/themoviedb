@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import searchval from "../../repositories/searchval";
-import { baseUrl, imgBaseUrl } from "../../repositories/repository";
-// import { current } from "@reduxjs/toolkit";
+import { imgBaseUrl } from "../../repositories/repository";
 
 export default function SearchPage() {
   const [search, setSearch] = useState([]);
-  const params = useParams();
+  const {title} = useParams();
 
   async function getTrendingMovieInfo(props) {
     const currentTrendingMovieInfo = await searchval.getSearchName(props);
@@ -15,8 +14,8 @@ export default function SearchPage() {
   }
 
   useEffect(() => {
-    console.log(params);
-    getTrendingMovieInfo(params);
+    console.log(title);
+    getTrendingMovieInfo(title);
   }, []);
 
   return (
