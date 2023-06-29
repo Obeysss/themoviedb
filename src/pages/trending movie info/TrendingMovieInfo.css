@@ -4,6 +4,7 @@
     height: 100vh;
     object-fit: cover;
     position: absolute;
+    image-rendering:auto;
     z-index: -1;
 }
 .backdrop_path-curtain{
@@ -18,6 +19,7 @@
 .MovieInfo-title{
     color: white;
     margin-left: 100px;
+    font-weight: 700;
     margin-top: 90px;
 }
 .MovieInfo-tagline{

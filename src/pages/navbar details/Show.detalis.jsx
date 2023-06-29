@@ -6,7 +6,6 @@ import { imgBaseUrl } from "../../repositories/repository";
 export default function ShowDetails() {
   const { id } = useParams();
   const [showDetails, setShowDetails] = useState([]);
-
   async function getShowByName(id) {
     const currentDetails = await tvshow.getShowByName(id);
     setShowDetails(currentDetails);
@@ -16,7 +15,6 @@ export default function ShowDetails() {
     getShowByName(id);
   }, [id]);
 
-  console.log(showDetails);
 
   return <div>
       {showDetails && (

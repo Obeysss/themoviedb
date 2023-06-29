@@ -2,7 +2,6 @@ import repository, { baseUrl, bearerToken } from "./repository";
 
 class SearchVal {
   async getSearchName(name) {
-    console.log(name);
     const endPoint = `search/multi?query=${name}`;
     const search = await repository
       .get(baseUrl + endPoint, {

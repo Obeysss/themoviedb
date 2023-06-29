@@ -1,0 +1,28 @@
+.search_card {
+  width: 95%;
+  height: 150px;
+  box-shadow: 0 0 10px 2px silver;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  margin-left: 30px;
+  overflow: hidden;
+}
+.search_card-flexing{
+    display: flex;
+}
+.search_card-felxing-left{
+    margin-right: 30px;
+}
+.search_card-felxing-right{
+    padding: 10px 0;
+}
+.search_card_img {
+  width: 100px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.search_card-felxing-right-title{
+    color: #999;
+    font-size: 14px;
+}

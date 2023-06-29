@@ -15,9 +15,14 @@ export default function Navbar() {
     <div className="navStiky">
       <div className="navbar">
         <ul className="navbar-ul">
-        <Link to={"/"}>
-          <img src={Logo} alt="Logotype" className="logotype" />
-        </Link>
+          <Link to={"/"}>
+            <img
+              src={Logo}
+              alt="Logotype"
+              className="logotype"
+              draggable="false"
+            />
+          </Link>
           <li className="navbar-ul-li">
             {t("movies")}
             <ul className="navbar-ul-ul">
@@ -104,25 +109,33 @@ export default function Navbar() {
           </li>
           <li>
             {/* <div className="btn-flexing"> */}
-              <button
-                onClick={() => changeLanguage("en")}
-                className="Language_button"
-              >
-                EN
-              </button>
-           
+            <button
+              onClick={() => changeLanguage("en")}
+              className="Language_button"
+            >
+              EN
+            </button>
+
             {/* </div> */}
           </li>
-          <li>   <button
-                onClick={() => changeLanguage("ru")}
-                className="Language_button"
-              >
-                RU
-              </button></li>
-          <li><i className="fa-solid fa-bell "></i></li>
-          <li><i className="fa-solid fa-user"></i></li>
-          <li><i className="fa-sharp fa-solid fa-magnifying-glass"></i></li>
-          
+          <li>
+            {" "}
+            <button
+              onClick={() => changeLanguage("ru")}
+              className="Language_button"
+            >
+              RU
+            </button>
+          </li>
+          <li>
+            <i className="fa-solid fa-bell "></i>
+          </li>
+          <li>
+            <i className="fa-solid fa-user"></i>
+          </li>
+          <li>
+            <i className="fa-sharp fa-solid fa-magnifying-glass"></i>
+          </li>
         </ul>
       </div>
     </div>
