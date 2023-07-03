@@ -15,25 +15,31 @@ import SearchPage from "./pages/search results/Search.page";
 import MoviesDetails from "./pages/navbar details/Movies.details";
 import ShowDetails from "./pages/navbar details/Show.detalis";
 import PersonDetails from "./pages/navbar details/Person.detail";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+import ShoppingPage from "./pages/shopping/Shopping.page";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Suspense fallback={<div>Loading...</div>}>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route path="/" element={<Home1Page />} />
-          <Route path="/movies/:title" element={<MoviePage />} />
-          <Route path="/tv/:title" element={<TvShowPage />} />
-          <Route path="/person" element={<PopularPerson />} />
-          <Route path="/movie/:id" element={<TrendingMovieInfo />} />
-          <Route path="/search/:title" element={<SearchPage />} />
-          <Route path="/movies_details/:id" element={<MoviesDetails/>}/>
-          <Route path="/tv/show_details/:id" element={<ShowDetails/>}/>
-          <Route path="/person_details/:id" element={<PersonDetails/>}/>
-        </Route>
-        <Route path="*" element={<PageNotFonud />} />
-      </Routes>
-    </BrowserRouter>
-  </Suspense>
+  <Provider store={store}>
+    <Suspense fallback={<div>Loading...</div>}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route path="/" element={<Home1Page />} />
+            <Route path="/movies/:title" element={<MoviePage />} />
+            <Route path="/tv/:title" element={<TvShowPage />} />
+            <Route path="/person" element={<PopularPerson />} />
+            <Route path="/movie/:id" element={<TrendingMovieInfo />} />
+            <Route path="/search/:title" element={<SearchPage />} />
+            <Route path="/movies/:id" element={<MoviesDetails />} />
+            <Route path="/tv/show_details/:id" element={<ShowDetails />} />
+            <Route path="/person_details/:id" element={<PersonDetails />} />
+            <Route path="/shopping" element={<ShoppingPage />} />
+          </Route>
+          <Route path="*" element={<PageNotFonud />} />
+        </Routes>
+      </BrowserRouter>
+    </Suspense>
+  </Provider>
 );

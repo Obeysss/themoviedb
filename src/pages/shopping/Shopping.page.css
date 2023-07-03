@@ -1,0 +1,47 @@
+.shopping {
+  padding: 0 50px;
+}
+.shopping-title {
+  text-align: center;
+  margin: 50px 0 30px 0;
+}
+.shopping-card {
+  width: 95%;
+  height: 150px;
+  box-shadow: 0 0 10px 2px silver;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  margin-left: 30px;
+  overflow: hidden;
+  position: relative;
+}
+.shopping-card-flexing {
+  display: flex;
+}
+.shopping-card-felxing-left {
+  margin-right: 30px;
+}
+.shopping-card_img {
+  width: 100px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.shopping-card-felxing-right-title {
+  color: #999;
+  font-size: 14px;
+}
+.shopping-card-img {
+  width: 300px;
+}
+.shopping-delete{
+  font-size: 25px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.no__featured_movie{
+  color: silver;
+  text-align: center;
+  margin: 77px 0;
+}

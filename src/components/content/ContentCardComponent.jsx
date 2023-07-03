@@ -7,7 +7,7 @@ export default function ContentCardComponent(props) {
     return (
       <div style={{ width: "calc(100% / 5)" }} key={index} className=" my-3">
         {" "}
-        <Link className="Link" to={`/movies_details/${item.id}`}>
+        <Link className="Link" to={`/movie/${item.id}`}>
         <div className="card">
             <img src={imgBaseUrl + item.poster_path} alt={item.title} />
             <b>{item.title}</b>

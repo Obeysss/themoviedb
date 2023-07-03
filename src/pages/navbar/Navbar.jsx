@@ -3,11 +3,13 @@ import "./Navbar.css";
 import Logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 export default function Navbar() {
   const moviePoint = "/movies/";
   const showPoint = "/tv/";
 
   const { t, i18n } = useTranslation();
+  const {card}=useSelector(state=>state)
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
@@ -131,10 +133,13 @@ export default function Navbar() {
             <i className="fa-solid fa-bell "></i>
           </li>
           <li>
-            <i className="fa-solid fa-user"></i>
+            <Link className="text-danger text-decoration-none" to={'/shopping'}>
+              <i className="fa-solid fa-heart text-primary"></i>
+              <span className="mx-2 text-primary fs-5">{card.length}</span>
+            </Link>
           </li>
           <li>
-            <i className="fa-sharp fa-solid fa-magnifying-glass"></i>
+            <i className="fa-sharp fa-solid fa-magnifying-glass "></i>
           </li>
         </ul>
       </div>
