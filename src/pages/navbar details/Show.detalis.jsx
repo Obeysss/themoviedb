@@ -12,6 +12,13 @@ import { addItem2 } from "../../store/watchList";
 export default function ShowDetails() {
   const { id } = useParams();
   const [showDetails, setShowDetails] = useState([]);
+  const [Like, setLike] = useState(null)
+  const [Watch, setWatch] = useState(null)
+
+  const localstorage1 = JSON.parse(localStorage.getItem("card"))
+  const localstorage2 = JSON.parse(localStorage.getItem("card2"))
+
+
   async function getShowByName(id) {
     const currentDetails = await tvshow.getShowByName(id);
     setShowDetails(currentDetails);
@@ -21,14 +28,29 @@ export default function ShowDetails() {
   const dispatch = useDispatch()
 
 
-  function handleClick(product) {
+  function handleClick1(product) {
+    setLike(true)
     dispatch(addItem(product))
   }
   function handleClick2(product) {
+    setWatch(true)
     dispatch(addItem2(product))
   }
 
+  function time1() {
+    setTimeout(function () {
+      let data1 = localstorage1.some(item => {
+        return item.id == showDetails.id
+      })
+      setLike(data1)
 
+      let data2 = localstorage2.some(item => {
+        return item.id == showDetails.id
+      })
+      setWatch(data2)
+    },)
+  }
+  time1()
 
   useEffect(() => {
     getShowByName(id);
@@ -39,18 +61,18 @@ export default function ShowDetails() {
     {showDetails && (
       <div>
         {
-          (showDetails.backdrop_path)?
-          <img
-            className="backdrop_path-img"
-            src={imgBaseUrl + showDetails.backdrop_path}
-            alt={showDetails.title}
-          />
-          :
-          <img
-          className="backdrop_path-img"
-          src={"https://images.puella-magi.net/thumb/2/27/No_Image_Wide.svg/1600px-No_Image_Wide.svg.png?20110202071158"}
-          alt={"no img"}
-        />
+          (showDetails.backdrop_path) ?
+            <img
+              className="backdrop_path-img"
+              src={imgBaseUrl + showDetails.backdrop_path}
+              alt={showDetails.title}
+            />
+            :
+            <img
+              className="backdrop_path-img"
+              src={"https://images.puella-magi.net/thumb/2/27/No_Image_Wide.svg/1600px-No_Image_Wide.svg.png?20110202071158"}
+              alt={"no img"}
+            />
         }
         <div className="backdrop_path-curtain">
           <div className="container">
@@ -166,7 +188,7 @@ export default function ShowDetails() {
                         styles={buildStyles({
                           backgroundColor: "#081c22",
                           textColor: "#fff",
-                          pathColor: "DB2360",
+                          pathColor: "#C22158",
                           trailColor: "#491532",
                           textSize: "30px",
                         })}
@@ -176,11 +198,22 @@ export default function ShowDetails() {
                   <p className="MovieInfo-menu-user_score">
                     User <br /> Score
                   </p>
-                  <div className="MovieInfo-menu-icons">
-                    <i onClick={() => handleClick(showDetails)} class="fa-solid fa-heart text-light"></i>
+                  <div  onClick={() => handleClick1(showDetails)} className="MovieInfo-menu-icons">
+                    {
+                      (Like) ?
+                        <i style={{ color: "rgb(221,86,178)", }} className="fa-solid fa-heart "></i>
+                        :
+                        <i className="fa-solid fa-heart text-light"></i>
+                    }
                   </div>
-                  <div className="MovieInfo-menu-icons">
-                    <i onClick={() => handleClick2(showDetails)} class="fa-solid fa-bookmark"></i>
+                  <div onClick={() => handleClick2(showDetails)} className="MovieInfo-menu-icons">
+                    {
+                      (Watch) ?
+                        <i style={{ color: "rgb(189,62,57)" }} class="fa-solid fa-bookmark "></i>
+                        :
+                        <i class="fa-solid fa-bookmark "></i>
+
+                    }
                   </div>
                   <div className="MovieInfo-menu-icons">
                     <i class="fa-solid fa-star"></i>
