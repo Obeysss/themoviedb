@@ -9,8 +9,16 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../../store/cardSlice";
 import { addItem2 } from "../../store/watchList";
 export default function TrendingMovieInfo() {
-  const [trendingMovieInfo, setTrendingMovieInfo] = useState({});
   const { id } = useParams();
+
+  const [trendingMovieInfo, setTrendingMovieInfo] = useState({});
+  const [Like, setLike] = useState(null)
+  const [Watch, setWatch] = useState(null)
+
+  const localstorage1 = JSON.parse(localStorage.getItem("card"))
+  const localstorage2 = JSON.parse(localStorage.getItem("card2"))
+
+
   async function getTrendingMovieInfo(id) {
     const currentTrendingMovieInfo = await trendinginfo.getTrendingMovieInfo(
       id
@@ -26,10 +34,30 @@ export default function TrendingMovieInfo() {
     getTrendingMovieInfo(id);
   }, []);
 
-  function handleClick(product) {
+
+  function time1() {
+    setTimeout(function () {
+      let data1 = localstorage1.some(item => {
+        return item.id == trendingMovieInfo.id
+      })
+      setLike(data1)
+
+      let data2 = localstorage2.some(item => {
+        return item.id == trendingMovieInfo.id
+      })
+      setWatch(data2)
+    },)
+  }
+  time1()
+
+
+
+  function handleClick1(product) {
+    setLike(true)
     dispatch(addItem(product))
   }
   function handleClick2(product) {
+    setWatch(true)
     dispatch(addItem2(product))
   }
   return (
@@ -73,7 +101,7 @@ export default function TrendingMovieInfo() {
                       {trendingMovieInfo.production_companies &&
                         trendingMovieInfo.production_companies.map(
                           (item, index) => {
-                            return (        
+                            return (
                               <span key={index}>
                                 {trendingMovieInfo.production_companies[0].origin_country}
                                 {index !== trendingMovieInfo.production_companies.length - 1 && " | "}
@@ -163,11 +191,23 @@ export default function TrendingMovieInfo() {
                     <p className="MovieInfo-menu-user_score">
                       User <br /> Score
                     </p>
-                    <div className="MovieInfo-menu-icons">
-                      <i onClick={() => handleClick(trendingMovieInfo)} class="fa-solid fa-heart text-light"></i>
+                    <div onClick={() => handleClick1(trendingMovieInfo)} className="MovieInfo-menu-icons">
+                      {/* <i onClick={() => handleClick(trendingMovieInfo)} class="fa-solid fa-heart text-light"></i> */}
+                      {
+                        (Like) ?
+                          <i  style={{ color: "rgb(221,86,178)", }} className="fa-solid fa-heart "></i>
+                          :
+                          <i className="fa-solid fa-heart text-light"></i>
+                      }
                     </div>
-                    <div className="MovieInfo-menu-icons">
-                      <i onClick={() => handleClick2(trendingMovieInfo)} class="fa-solid fa-bookmark"></i>
+                    <div onClick={() => handleClick2(trendingMovieInfo)} className="MovieInfo-menu-icons">
+                      {
+                        (Watch) ?
+                          <i style={{ color: "rgb(189,62,57)" }} class="fa-solid fa-bookmark "></i>
+                          :
+                          <i class="fa-solid fa-bookmark "></i>
+
+                      }
                     </div>
                     <div className="MovieInfo-menu-icons">
                       <i class="fa-solid fa-star"></i>
