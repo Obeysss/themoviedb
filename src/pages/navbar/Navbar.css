@@ -93,3 +93,76 @@
   margin-top: 10px;
   font-size: 17px;
 }
+.favourite {
+  margin-top: 10px;
+  transition: 0.3s;
+}
+.favourite:hover {
+  background-color: #032541;
+  color: white;
+  transition: 0.3s;
+}
+.favourite:hover .favourite-count {
+  color: #032541;
+  background-color: white;
+}
+
+.favourite-title {
+  color: #000;
+  color: #a4a4a4;
+  padding-left: 30px;
+  font-weight: 500;
+}
+.favourite:hover .favourite-title {
+  color: white;
+}
+.navbar-settings-open {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #01b4e4;
+  font-weight: 600;
+}
+.navbar-settings-close {
+  position: absolute;
+  width: 178px;
+  height: auto;
+  border: 1px solid silver;
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px 0px;
+  top: 40px;
+  right: -40px;
+}
+.navbar-settings-close-name {
+  color: black;
+  font-weight: 600;
+  padding-left: 30px;
+}
+.navbar-settings-close-view-profile {
+  color: #a4a4a4;
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: -11px;
+  padding-left: 30px;
+}
+.navbar-setting-close-hr {
+  width: 100%;
+  border-bottom: 1px solid #dedfdf;
+  color: silver;
+}
+.favourite-count {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  background-color: #032541;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3px;
+  margin-left: 20px;
+}

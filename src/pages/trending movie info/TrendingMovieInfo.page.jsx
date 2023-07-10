@@ -7,6 +7,7 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../store/cardSlice";
+import { addItem2 } from "../../store/watchList";
 export default function TrendingMovieInfo() {
   const [trendingMovieInfo, setTrendingMovieInfo] = useState({});
   const { id } = useParams();
@@ -28,7 +29,9 @@ export default function TrendingMovieInfo() {
   function handleClick(product) {
     dispatch(addItem(product))
   }
-
+  function handleClick2(product) {
+    dispatch(addItem2(product))
+  }
   return (
     <div>
       {trendingMovieInfo && (
@@ -70,18 +73,11 @@ export default function TrendingMovieInfo() {
                       {trendingMovieInfo.production_companies &&
                         trendingMovieInfo.production_companies.map(
                           (item, index) => {
-                            return (
+                            return (        
                               <span key={index}>
-                                {item.origin_country}
-                                {index !==
-                                  trendingMovieInfo.production_companies[0  ]
-                                    .length -
-                                  1 && " | "}
+                                {trendingMovieInfo.production_companies[0].origin_country}
+                                {index !== trendingMovieInfo.production_companies.length - 1 && " | "}
                               </span>
-                              // <span key={index}>
-                              //   {trendingMovieInfo.production_companies[0].origin_country}
-                              //   {index !== trendingMovieInfo.production_companies.length - 1 && " | "}
-                              // </span>
                             );
                           }
                         )}
@@ -168,13 +164,10 @@ export default function TrendingMovieInfo() {
                       User <br /> Score
                     </p>
                     <div className="MovieInfo-menu-icons">
-
-
                       <i onClick={() => handleClick(trendingMovieInfo)} class="fa-solid fa-heart text-light"></i>
-
                     </div>
                     <div className="MovieInfo-menu-icons">
-                      <i class="fa-solid fa-bookmark"></i>
+                      <i onClick={() => handleClick2(trendingMovieInfo)} class="fa-solid fa-bookmark"></i>
                     </div>
                     <div className="MovieInfo-menu-icons">
                       <i class="fa-solid fa-star"></i>

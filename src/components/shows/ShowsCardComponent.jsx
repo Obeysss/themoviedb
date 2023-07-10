@@ -10,6 +10,7 @@ export default function ShowsCardComponent(props) {
           <div className="card">
             <img src={imgBaseUrl + item.poster_path} alt={item.name} />
             <b>{item.name}</b>
+            <p>{item.first_air_date}</p>
           </div>
         </Link>
       </div>

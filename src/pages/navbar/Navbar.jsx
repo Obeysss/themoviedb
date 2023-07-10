@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import Logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
@@ -7,12 +7,24 @@ import { useSelector } from "react-redux";
 export default function Navbar() {
   const moviePoint = "/movies/";
   const showPoint = "/tv/";
-
+  const [Open, setOpen] = useState("none")
   const { t, i18n } = useTranslation();
-  const {card}=useSelector(state=>state)
+  const { card } = useSelector(state => state)
+  const { card2 } = useSelector(state => state)
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
+
+
+  function Settings() {
+    if (Open == "none") {
+      setOpen("inline")
+    } else {
+      setOpen("none")
+
+    }
+  }
+
   return (
     <div className="navStiky">
       <div className="navbar">
@@ -133,10 +145,25 @@ export default function Navbar() {
             <i className="fa-solid fa-bell "></i>
           </li>
           <li>
-            <Link className="text-danger text-decoration-none" to={'/shopping'}>
-              <i className="fa-solid fa-heart text-primary"></i>
-              <span className="mx-2 text-primary fs-5">{card.length}</span>
-            </Link>
+            <div className="navbar-settings-open" onClick={Settings}>O</div>
+            <div className="navbar-settings-close" style={{ display: `${Open}` }}>
+              <p className="navbar-settings-close-name">Oybek</p>
+              <p className="navbar-settings-close-view-profile">View profile</p>
+              <div className="navbar-setting-close-hr" />
+              <Link className="text-danger d-flex text-decoration-none favourite" to={'/Favourite '}>
+                <span className="favourite-title">Favourite</span>
+                <div className="favourite-count">
+                  <b>{card.length}</b>
+                </div>
+              </Link>
+              <Link className="text-danger d-flex text-decoration-none favourite" to={'/Watchlist'}>
+                <span className="favourite-title">Watchlist</span>
+                <div className="favourite-count">
+                  <b>{card2.length}</b>
+                </div>
+              </Link>
+            </div>
+
           </li>
           <li>
             <i className="fa-sharp fa-solid fa-magnifying-glass "></i>

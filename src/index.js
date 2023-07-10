@@ -18,6 +18,7 @@ import PersonDetails from "./pages/navbar details/Person.detail";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 import ShoppingPage from "./pages/shopping/Shopping.page";
+import Watchlist from "./pages/Watchlist/Watchlist";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -35,7 +36,8 @@ root.render(
             <Route path="/movies/:id" element={<MoviesDetails />} />
             <Route path="/tv/show_details/:id" element={<ShowDetails />} />
             <Route path="/person_details/:id" element={<PersonDetails />} />
-            <Route path="/shopping" element={<ShoppingPage />} />
+            <Route path="/Favourite" element={<ShoppingPage />} />
+            <Route path="/Watchlist" element={<Watchlist/>}/>
           </Route>
           <Route path="*" element={<PageNotFonud />} />
         </Routes>

@@ -8,6 +8,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import ModalMovie from '../tranding movie/ModalMovie'
 
 export default function WhatsPopularPage() {
   const [whatsPopularMovieList, setWhatsPopularMovieList] = useState([]);
@@ -50,6 +51,7 @@ export default function WhatsPopularPage() {
           whatsPopularMovieList.map((item, index) => {
             return (
               <div className="trending-movie-flex-card" key={index}>
+                  <div className="card border-0">
                 <Link
                   className="Link"
                   to={
@@ -58,13 +60,17 @@ export default function WhatsPopularPage() {
                       : `/movie/${item.id}`
                   }
                 >
-                  <div className="card border-0">
                     <LazyLoadImage
                       effect="blur "
                       src={imgBaseUrl + item.poster_path}
                       alt={item.title}
                       className="trending-movie-img"
                     />
+
+                    </Link>
+
+                    <ModalMovie state={{item:item}}/>
+
                     <div className="circle">
                       {Math.round(item.vote_average * 10) > 70 ? (
                         <CircularProgressbar
@@ -115,7 +121,6 @@ export default function WhatsPopularPage() {
                     <p>{item.release_date}</p>
                     <p>{item.first_air_date}</p>
                   </div>
-                </Link>
               </div>
             );
           })}

@@ -2,24 +2,24 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { imgBaseUrl } from "../../repositories/repository";
 import { Link } from 'react-router-dom';
-import { removeItem } from '../../store/cardSlice';
-import './Shopping.page.css'
+import { removeItem2 } from '../../store/watchList';
+import './Watchlist.css'
 
-export default function ShoppingPage() {
-  const { card } = useSelector(state => state);
+export default function Watchlist() {
+  const { card2 } = useSelector(state => state);
   const dispatch = useDispatch();
   function handleCLick(id) {
-    dispatch(removeItem(id))
+    dispatch(removeItem2(id))
   }
-  console.log(card);
+//   console.log(card);
   return (
     <div className='shopping'>
-      <h1 className='shopping-title'><span>Your Favourite Films</span> </h1>
+      <h1 className='shopping-title'><span>Your Watchlist Films</span> </h1>
 
 
-      {card.length > 0 ? (
+      {card2.length > 0 ? (
         <div>
-          {card.map((item) => (
+          {card2.map((item) => (
             <div className="shopping-card" key={item.id}>
               <Link to={item.media_type == "tv" ? `/tv/show_details/${item.id}` : `/movie/${item.id}`} className="Link">
                 <div className="shopping-card-flexing">

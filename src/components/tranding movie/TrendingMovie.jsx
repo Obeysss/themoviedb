@@ -8,16 +8,13 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { addItem } from "../../store/cardSlice";
-import { useDispatch } from "react-redux"
+import ModalMovie from "./ModalMovie";
 
 export default function TrendingMovie() {
   const [trendingMovieList, setTrendingMovieList] = useState([]);
-
   const [type, setType] = useState("day");
 
   const { t } = useTranslation();
-  const dispatch = useDispatch();
 
   async function getTrendingMovie() {
     const currentTrendingMovie = await trending.getTrendingMovie(type);
@@ -27,9 +24,8 @@ export default function TrendingMovie() {
     getTrendingMovie();
   }, [type]);
 
-  function handleClick(product) {
-    dispatch(addItem(product))
-  }
+
+
 
   return (
     <div className="my-4">
@@ -67,7 +63,7 @@ export default function TrendingMovie() {
                         className="trending-movie-img"
                       />
                     </Link>
-
+                    <ModalMovie state={{item:item}}/>
                     <div className="circle">
                       {item.vote_average !== 0 &&
                         Math.round(item.vote_average * 10) > 70 ? (
@@ -126,7 +122,6 @@ export default function TrendingMovie() {
 
                     </p>
 
-                    <i onClick={() => handleClick(item)} className="fa-solid text-primary fa-heart"></i>
 
                   </div>
                 </div>
