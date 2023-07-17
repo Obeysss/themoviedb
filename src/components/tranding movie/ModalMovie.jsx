@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { addItem } from "../../store/cardSlice";
 import { useDispatch } from "react-redux"
 import { addItem2 } from '../../store/watchList';
+import { useTranslation } from 'react-i18next';
 export default function ModalMovie(props) {
   const [Open, SetOpen] = useState("none")
   const [Like, setLike] = useState(null)
@@ -11,7 +12,7 @@ export default function ModalMovie(props) {
 
   const localstorage1 = JSON.parse(localStorage.getItem("card"))
   const localstorage2 = JSON.parse(localStorage.getItem("card2"))
-
+  const { t } = useTranslation();
 
   function MenuList() {
     if (Open == 'none') {
@@ -65,7 +66,7 @@ export default function ModalMovie(props) {
               :
               <i onClick={() => handleClick1(props.state.item)} className="fa-solid fa-heart Lists-elements-icon"></i>
           }
-          <p className='Lists-elements-title' onClick={() => handleClick1(props.state.item)} >Favourite</p>
+          <p className='Lists-elements-title' onClick={() => handleClick1(props.state.item)} >{t('Favourite_redux')}</p>
         </div>
         <div style={{ cursor: "pointer" }} className="Lists-elements">
           {
@@ -75,7 +76,7 @@ export default function ModalMovie(props) {
               <i onClick={() => handleClick2(props.state.item)} class="fa-solid fa-bookmark Lists-elements-icon"></i>
 
           }
-          <p className='Lists-elements-title' onClick={() => handleClick2(props.state.item)} >Watchlist</p>
+          <p className='Lists-elements-title' onClick={() => handleClick2(props.state.item)} >{t('Watchlist_redux')}</p>
         </div>
       </div>
     </div>

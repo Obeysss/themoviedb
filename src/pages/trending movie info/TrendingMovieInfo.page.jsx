@@ -64,20 +64,40 @@ export default function TrendingMovieInfo() {
     <div>
       {trendingMovieInfo && (
         <div>
-          <img
+         
+          {
+            (trendingMovieInfo.backdrop_path)?
+            <img
             className="backdrop_path-img"
             src={imgBaseUrl + trendingMovieInfo.backdrop_path}
             alt={trendingMovieInfo.title}
           />
+          :
+          <img
+          className="backdrop_path-img"
+          src={'https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg'}
+          alt={trendingMovieInfo.title}
+        />
+          }
           <div className="backdrop_path-curtain">
             <div className="container">
               <div className="row">
                 <div className="col-3">
-                  <img
+                  
+                  {
+                    (trendingMovieInfo.poster_path)?
+                    <img
                     className="MovieInfo-poster_path"
                     src={imgBaseUrl + trendingMovieInfo.poster_path}
                     alt=""
-                  />
+                  /> 
+                  :
+                  <img
+                  className="MovieInfo-poster_path"
+                  src={'https://t4.ftcdn.net/jpg/04/99/93/31/360_F_499933117_ZAUBfv3P1HEOsZDrnkbNCt4jc3AodArl.jpg'}
+                  alt=""
+                /> 
+                  }
                 </div>
                 <div className="col-9">
                   <h1 className="MovieInfo-title">
@@ -195,7 +215,7 @@ export default function TrendingMovieInfo() {
                       {/* <i onClick={() => handleClick(trendingMovieInfo)} class="fa-solid fa-heart text-light"></i> */}
                       {
                         (Like) ?
-                          <i  style={{ color: "rgb(221,86,178)", }} className="fa-solid fa-heart "></i>
+                          <i style={{ color: "rgb(221,86,178)", }} className="fa-solid fa-heart "></i>
                           :
                           <i className="fa-solid fa-heart text-light"></i>
                       }

@@ -40,6 +40,15 @@
   "terms_of_use":"Эксплуатации",
   "api_terms_of_use":"Условия API",
   "privacy_police":"Тех поддержка",
-  "join_the_community":"ВСТУПИТЬ В СООБЩЕСТВУ"
+  "join_the_community":"ВСТУПИТЬ В СООБЩЕСТВУ",
+  "Favourite_redux":"Любимый",
+  "Watchlist_redux":"Наблюдения",
+  "view_profile":"Смотреть профиль",
+  "your_favourite_films":"Ваши избранные фильмы",
+  "no_feadtured_movie":"Нет избранного фильма",
+  "your_watchlist_films":"Ваш список просмотра фильмов",
+  "no_watchlist_films":"Нет список просмотра фильма"
+
+
   
 }

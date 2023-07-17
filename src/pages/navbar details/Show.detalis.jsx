@@ -70,7 +70,7 @@ export default function ShowDetails() {
             :
             <img
               className="backdrop_path-img"
-              src={"https://images.puella-magi.net/thumb/2/27/No_Image_Wide.svg/1600px-No_Image_Wide.svg.png?20110202071158"}
+              src={"https://pbs.twimg.com/profile_images/1236850346753789952/PcJkVPUo_400x400.jpg"}
               alt={"no img"}
             />
         }

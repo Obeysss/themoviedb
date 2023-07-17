@@ -35,7 +35,7 @@ root.render(
             <Route path="/search/:title" element={<SearchPage />} />
             <Route path="/movies/:id" element={<MoviesDetails />} />
             <Route path="/tv/show_details/:id" element={<ShowDetails />} />
-            <Route path="/person_details/:id" element={<PersonDetails />} />
+            <Route path="/person/:id" element={<PersonDetails />} />
             <Route path="/Favourite" element={<ShoppingPage />} />
             <Route path="/Watchlist" element={<Watchlist/>}/>
           </Route>

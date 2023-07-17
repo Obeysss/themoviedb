@@ -1,0 +1,73 @@
+.personDetails {
+  width: 100%;
+  height: auto;
+}
+.personDetails-flexing {
+  display: flex;
+  padding: 30px;
+}
+.personDetails-flexing-left {
+  margin-right: 50px;
+}
+.personDetails-flexing-left-img {
+  width: 300px;
+  height: 450px;
+  border-radius: 10px;
+}
+.personDetails-flexing-right-title {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.personDetails-flexing-right-bio {
+  font-weight: 600;
+  font-size: 22px;
+}
+.read-more {
+  width: 90px;
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+  color: #01B4E8;
+  font-weight: 500;
+}
+.personDetails-flexing-right-know {
+  font-size: 20px;
+  margin-top: 20px;
+}
+.departamner {
+  font-weight: 500;
+}
+.personCredits-flexing {
+  display: flex;
+  flex-direction: row;
+  width: calc(150px * 6);
+  gap: 50px;
+  overflow-x: scroll;
+  border-radius: 5px;
+  flex-shrink: 0;
+  margin-top: 20px;
+}
+.personCredits-flexing::-webkit-scrollbar {
+  width: 5px;
+  height: 7px;
+}
+.personCredits-flexing::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+.personCredits-flexing::-webkit-scrollbar-thumb {
+  background-color: #dbdbdb;
+  border-radius: 7px;
+}
+
+.personDetails-flexing-right-biography {
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.personCredits-flexing-img {
+  width: 130px;
+  height: 195px;
+  object-fit: cover;
+  border-radius: 10px;
+}

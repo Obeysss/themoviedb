@@ -4,17 +4,19 @@ import { imgBaseUrl } from "../../repositories/repository";
 import { Link } from 'react-router-dom';
 import { removeItem2 } from '../../store/watchList';
 import './Watchlist.css'
+import { useTranslation } from 'react-i18next';
 
 export default function Watchlist() {
   const { card2 } = useSelector(state => state);
   const dispatch = useDispatch();
+  const {t}= useTranslation();
   function handleCLick(id) {
     dispatch(removeItem2(id))
   }
 //   console.log(card);
   return (
     <div className='shopping'>
-      <h1 className='shopping-title'><span>Your Watchlist Films</span> </h1>
+      <h1 className='shopping-title'><span>{t('your_watchlist_films')}</span> </h1>
 
 
       {card2.length > 0 ? (
@@ -42,7 +44,7 @@ export default function Watchlist() {
           ))}
         </div>
       ) : (
-        <h3 className='no__featured_movie'>No Featured Movie</h3>
+        <h3 className='no__featured_movie'>{t('no_watchlist_films')}</h3>
       )}
 
     </div>

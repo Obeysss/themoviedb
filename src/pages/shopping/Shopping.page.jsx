@@ -4,6 +4,7 @@ import { imgBaseUrl } from "../../repositories/repository";
 import { Link } from 'react-router-dom';
 import { removeItem } from '../../store/cardSlice';
 import './Shopping.page.css'
+import { useTranslation } from 'react-i18next';
 
 export default function ShoppingPage() {
   const { card } = useSelector(state => state);
@@ -11,10 +12,11 @@ export default function ShoppingPage() {
   function handleCLick(id) {
     dispatch(removeItem(id))
   }
+  const {t} =useTranslation()
   console.log(card);
   return (
     <div className='shopping'>
-      <h1 className='shopping-title'><span>Your Favourite Films</span> </h1>
+      <h1 className='shopping-title'><span>{t('your_favourite_films')}</span> </h1>
 
 
       {card.length > 0 ? (
@@ -42,7 +44,7 @@ export default function ShoppingPage() {
           ))}
         </div>
       ) : (
-        <h3 className='no__featured_movie'>No Featured Movie</h3>
+        <h3 className='no__featured_movie'>{t('no_feadtured_movie')}</h3>
       )}
 
     </div>

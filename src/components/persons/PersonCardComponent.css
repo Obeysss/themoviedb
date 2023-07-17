@@ -1,6 +1,13 @@
 .person-img {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background-color: #DBDBDB;
+  background-color: #dbdbdb;
   height: 303px;
+  width: 204px;
+}
+.person_card {
+  box-shadow: 0 0 8px 1px silver;
+}
+.person_name{
+  margin: 5px 0 0 20px;
+  font-weight: 600;
+  font-size: 18px;
 }

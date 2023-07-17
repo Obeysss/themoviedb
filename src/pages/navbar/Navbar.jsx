@@ -12,7 +12,9 @@ export default function Navbar() {
   const { card } = useSelector(state => state)
   const { card2 } = useSelector(state => state)
   const changeLanguage = (language) => {
+   setTimeout(() => {
     i18n.changeLanguage(language);
+   }, 700);
   };
 
 
@@ -148,16 +150,16 @@ export default function Navbar() {
             <div className="navbar-settings-open" onClick={Settings}>O</div>
             <div className="navbar-settings-close" style={{ display: `${Open}` }}>
               <p className="navbar-settings-close-name">Oybek</p>
-              <p className="navbar-settings-close-view-profile">View profile</p>
+              <p className="navbar-settings-close-view-profile">{t('view_profile')}</p>
               <div className="navbar-setting-close-hr" />
               <Link className="text-danger d-flex text-decoration-none favourite" to={'/Favourite '}>
-                <span className="favourite-title">Favourite</span>
+                <span className="favourite-title">{t('Favourite_redux')}</span>
                 <div className="favourite-count">
                   <b>{card.length}</b>
                 </div>
               </Link>
               <Link className="text-danger d-flex text-decoration-none favourite" to={'/Watchlist'}>
-                <span className="favourite-title">Watchlist</span>
+                <span className="favourite-title">{t('Watchlist_redux')}</span>
                 <div className="favourite-count">
                   <b>{card2.length}</b>
                 </div>

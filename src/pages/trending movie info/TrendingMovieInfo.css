@@ -12,8 +12,11 @@
   background-color: rgba(0, 0, 0, 0.739);
 }
 .MovieInfo-poster_path {
+  width: 350px;
   height: 500px;
   margin-top: 90px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 .col-9 {
   padding-left: 100px;

@@ -40,5 +40,13 @@
   "terms_of_use":"Terms of use",
   "api_terms_of_use":"API Terms of Use",
   "privacy_police":"Privacy Police",
-  "join_the_community":"JOIN THE COMMUNITY"
+  "join_the_community":"JOIN THE COMMUNITY",
+  "Favourite_redux":"Favourite",
+  "Watchlist_redux":"Watchlist",
+  "view_profile":"View profile",
+  "your_favourite_films":"Your Favourite Films",
+  "no_feadtured_movie":"No Featured Movie",
+  "your_watchlist_films":"Your Watchlist Films",
+  "no_watchlist_films":"No movie Watchlist"
+
 }
